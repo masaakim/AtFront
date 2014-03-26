@@ -1,17 +1,17 @@
 module.exports = (grunt) ->
   grunt.initConfig
-    # js$B%i%$%V%i%j$N(Bconcat
+    # bowerでinstallしたjsのconcat
     bower_concat:
       all:
         dest: './build/js/vendor.js'
         include: [
-          # concat$B$7$?$$%U%!%$%k(B
+          # concatしたいファイル（何も書かないと全部）
         ]
         exclude: [
-          # concat$B$7$?$/$J$$%U%!%$%k(B
+          # concatしたくないファイル
         ]
         dependencies:
-          # $B0MB8$7$F$$$k%i%$%V%i%j$N4X78$r=q$/(B
+          # ライブラリの依存関係
           # example
           'backbone': ['jquery', 'underscore']
         bowerOptions:
@@ -49,9 +49,10 @@ module.exports = (grunt) ->
         files:
           "build/css/app.min.css": ["build/css/app.css"]
 
-    # $B%i%$%V%i%j0J30$N(Bjs$B%U%!%$%k$N(Bconcat
+    # 自分で書いたjsのconcat
     concat:
       'build/js/app.js': [
+        # ここに書いていく
         'src/javascripts/hogehoge.js',
         'src/javascripts/piyopiyo.js'
       ]
