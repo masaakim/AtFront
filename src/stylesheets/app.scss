@@ -1,4 +1,5 @@
-// まとめて1つのファイルにしたいとき
+@import 'compass';
+@import 'bootstrap';
 
-// @import 'common';
-// @import 'ui';
+@import 'common';
+@import 'ui';
