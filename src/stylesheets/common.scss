@@ -1,1 +1,5 @@
-// common$B%G%#%l%/%H%j$N%Q!<%7%c%k%U%!%$%k$rFI$_9~$`(B
+@import 'compass';
+@import 'bootstrap';
+
+// ./common のパーシャルファイルを読み込む
+@import 'common/base';

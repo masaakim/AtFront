@@ -1,6 +1,6 @@
 # Grunt
 
-## プラギンッ
+### プラギンッ
 
 - grunt-bower-concat
  - bowerでインストールしたライブラリのconcat
@@ -22,7 +22,7 @@ csslintとcsscombと(jshintとか)はエディタで対応すべきかなと思�
 変更するのは、
 
 - grunt-bower-concat
-- grunt-concat
+- grunt-contrib-concat
 
 ぐらい（？）
 

@@ -4,6 +4,7 @@
 
 ### build
 コンパイルされたり、concatされたファイル置き場
+
 htmlから読み込むのはここのファイル
 
 - js
@@ -32,6 +33,7 @@ Macだとrubyはデフォルトで入ってるけどv1.8.7でSass 3.2が入る�
 
 nodeのインストールは[公式サイト](http://nodejs.org/download/)から
 
+- (gem install bundler)
 - bundle install
 - (npm install -g grunt)
 - npm install

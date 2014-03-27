@@ -29,14 +29,14 @@ module.exports = (grunt) ->
         options:
           sassDir: "src/stylesheets"
           cssDir: "build/css"
-          specify: "src/stylesheets/*.scss"
+          specify: "src/stylesheets/**/*.scss"
           bundleExec: true
           environment: "development"
 
     csscomb:
       dist:
         files:
-          "src/stylesheets/*.scss": ["src/stylesheets/*.scss"]
+          "src/stylesheets/**/*.scss": ["src/stylesheets/**/*.scss"]
 
     csslint:
       dist:
@@ -70,11 +70,11 @@ module.exports = (grunt) ->
         livereload: true
 
       stylesheets:
-        files: ["src/stylesheets/*.scss"]
+        files: ["src/stylesheets/**/*.scss"]
         tasks: ["stylesheet"]
 
       javascript:
-        files: ["src/javascripts/*.js"]
+        files: ["src/javascripts/**/*.js"]
         tasks: [""]
 
   grunt.loadNpmTasks "grunt-bower-concat"
@@ -91,6 +91,7 @@ module.exports = (grunt) ->
   grunt.registerTask "develop", [
     "bower_concat"
     "uglify:vendor"
+    "compass"
     "connect:app"
     "watch"
   ]
