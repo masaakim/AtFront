@@ -47,7 +47,8 @@ module.exports = (grunt) ->
     csso:
       dist:
         files:
-          "build/css/app.min.css": ["build/css/app.css"]
+          # uncss したファイル
+          "build/css/hoge.min.css": ["build/css/hoge.css"]
 
     # 自分で書いたjsのconcat
     concat:
@@ -64,6 +65,14 @@ module.exports = (grunt) ->
       vendor:
         files:
           'build/js/vendor.min.js': ['build/js/vendor.js']
+
+  # そのページで使うルールセットだけ抽出してくれるやつ
+  uncss:
+    dist:
+      files:
+        # ここに書いていく
+        'build/css/hoge.css': ['hoge.php']
+        'build/css/piyo.css': ['piyo.php']
 
     watch:
       options:
@@ -86,6 +95,7 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks "grunt-contrib-watch"
   grunt.loadNpmTasks "grunt-csscomb"
   grunt.loadNpmTasks "grunt-csso"
+  grunt.loadNpmTasks "grunt-uncss"
 
   grunt.registerTask "default", ["develop"]
   grunt.registerTask "develop", [
@@ -102,6 +112,7 @@ module.exports = (grunt) ->
   ]
   grunt.registerTask "build", [
     "stylesheet"
+    "uncss"
     "csso"
     "concat"
     "bower_concat"

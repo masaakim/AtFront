@@ -16,6 +16,7 @@
 - grunt-csscomb（いらないかも）
 - grunt-csso
  - cssのminify
+  
 
 csslintとcsscombと(jshintとか)はエディタで対応すべきかなと思います
 
