@@ -36,7 +36,7 @@ module.exports = (grunt) ->
     csscomb:
       dist:
         files:
-          "src/stylesheets/**/*.scss": ["src/stylesheets/**/*.scss"]
+          "src/stylesheets/app.scss": ["src/stylesheets/app.scss"]
 
     csslint:
       dist:
@@ -66,13 +66,13 @@ module.exports = (grunt) ->
         files:
           'build/js/vendor.min.js': ['build/js/vendor.js']
 
-  # そのページで使うルールセットだけ抽出してくれるやつ
-  uncss:
-    dist:
-      files:
-        # ここに書いていく
-        'build/css/hoge.css': ['hoge.php']
-        'build/css/piyo.css': ['piyo.php']
+    # そのページで使うルールセットだけ抽出してくれるやつ
+    uncss:
+      dist:
+        files:
+          # ここに書いていく
+          'build/css/hoge.css': ['hoge.php']
+          'build/css/piyo.css': ['piyo.php']
 
     watch:
       options:
@@ -101,14 +101,13 @@ module.exports = (grunt) ->
   grunt.registerTask "develop", [
     "bower_concat"
     "uglify:vendor"
-    "compass"
+    "stylesheet"
     "connect:app"
     "watch"
   ]
   grunt.registerTask "stylesheet", [
     "compass"
     "csscomb"
-    "csslint"
   ]
   grunt.registerTask "build", [
     "stylesheet"
